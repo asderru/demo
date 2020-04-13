@@ -5,9 +5,13 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'vendorPath' => '/var/www/vendor',
+    'bootstrap' => [
+        'common\bootstrap\SetUp',
+    ],
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\caching\MemCache',
+            'useMemcached' => true,
         ],
     ],
 ];
